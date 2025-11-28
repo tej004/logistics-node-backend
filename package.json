@@ -7,8 +7,7 @@
     "start": "ts-node src/app.ts"
   },
   "repository": {
-    "type": "git",
-    "url": "github-personal:tej004/logistics-node-backend.git"
+    "type": "git"
   },
   "keywords": [],
   "author": "",
