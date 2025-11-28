@@ -12,7 +12,10 @@ export default new DataSource({
   database: process.env.DB_DATABASE || "demo",
   synchronize: process.env.DB_SYNCHRONIZE === "true" || false,
   logging: process.env.DB_LOGGING === "true" || false,
-  entities: ["dist/**/*.entity{.ts,.js}"],
-  migrations: ["dist/modules/database/migrations/*{.ts,.js}"],
+  entities: [
+    process.env.NODE_ENV === "production"
+    ? "dist/**/*.entity.js"
+    : "src/**/*.entity{.ts,.js}"],
+  migrations: ["src/database/migrations/*{.ts,.js}"],
   migrationsRun: false,
 });

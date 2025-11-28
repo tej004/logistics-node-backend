@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "start": "ts-node src/app.ts"
+    "start": "npx ts-node -r tsconfig-paths/register src/app.ts",
+    "dev": "nodemon --watch src --ext ts,js,json --exec 'npx ts-node -r tsconfig-paths/register src/app.ts'",
+    "build": "tsc",
+    "migration:generate": "npx ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:generate",
+    "migration:run": "npx ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:run"
   },
   "repository": {
     "type": "git"
@@ -16,13 +20,20 @@
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/cors": "^2.8.19",
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "tsconfig-paths": "^4.2.0",
     "typeorm": "^0.3.27"
   }
 }
