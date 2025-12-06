@@ -1,7 +1,7 @@
 import { RiderEntity } from "@/database/entities/rider.entity";
 import { ERole } from "@/types/enums/db/role.enum";
 import { userRepository } from "@/database/repositories/user.repository";
-import { riderRepository } from "@/database/repositories/rider.respository";
+import { riderRepository } from "@/database/repositories/rider.repository";
 
 export class RiderService {
   static async register(riderData: Partial<RiderEntity>, userId: string) {
