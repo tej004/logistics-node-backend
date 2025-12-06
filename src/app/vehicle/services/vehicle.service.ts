@@ -6,7 +6,9 @@ export class VehicleService {
   }
 
   static async createVehicle(vehicleData: any) {
-    return vehicleRepository.create(vehicleData)
+    const data = vehicleRepository.create(vehicleData)
+
+    return vehicleRepository.save(data)
   }
 
   static async getVehicleById(vehicleId: string) {

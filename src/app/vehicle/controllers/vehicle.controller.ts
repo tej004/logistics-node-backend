@@ -14,7 +14,7 @@ export class VehicleController {
   static async createVehicle(req: Request, res: Response): Promise<Response> {
     try {
       const vehicleData = req.body
-      const newVehicle = VehicleService.createVehicle(vehicleData)
+      const newVehicle = await VehicleService.createVehicle(vehicleData)
       return res.status(201).json(newVehicle)
     } catch (error) {
       return res.status(500).json({ message: 'Error creating vehicle', error })
